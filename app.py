@@ -78,7 +78,6 @@ def get_tasks():
     desk = request.args.get('desk', False, type=bool)
     q = db.session.query(Todo)
     if order_by in order_dict:
-        print(1)
         order_by = order_dict[order_by]
         if desk:
             order_by = sqlalchemy.desc(order_by)
